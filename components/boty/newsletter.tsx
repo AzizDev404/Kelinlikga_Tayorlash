@@ -77,6 +77,8 @@ export function Newsletter() {
             width={160}
             height={58}
             className="h-14 w-auto object-contain mx-auto mb-6 brightness-0 invert opacity-90"
+            sizes="160px"
+            loading="lazy"
           />
           <h2 className="font-serif text-4xl leading-tight text-primary-foreground mb-4 text-balance md:text-7xl">
             Kursga yozilish

@@ -31,6 +31,8 @@ export function Footer() {
                 width={180}
                 height={66}
                 className="h-16 w-auto object-contain"
+                sizes="180px"
+                loading="lazy"
               />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-sm">
