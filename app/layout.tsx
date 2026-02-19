@@ -17,11 +17,27 @@ const playfairDisplay = Playfair_Display({
   weight: ['400', '500', '600', '700']
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelinlikka-tayyorlash.vercel.app'
+
 export const metadata: Metadata = {
-  title: 'Boty — Natural Skincare',
-  description: 'Premium natural skincare and body care products. Glow gently with Boty.',
-  generator: 'v0.app',
-  keywords: ['skincare', 'natural', 'organic', 'beauty', 'body care', 'cruelty-free'],
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: '/' },
+  title: 'Kelinlikka tayyorlash | Kelinlik kursi',
+  description: 'Kelinlikka ma\'naviy va amaliy tayyorgarlik kursi. 9 yo\'nalish, 56 ta video, 1,5 oy. Psixologiya, oshxona, kosmetologiya, AI va boshqalar.',
+  keywords: ['kelinlikka tayyorlash', 'kelinlik kursi', 'turmushga tayyorgarlik', 'kelinlik saboqlari', 'psixologiya', 'oshxona san\'ati', 'O\'zbekiston'],
+  openGraph: {
+    title: 'Kelinlikka tayyorlash | Kelinlik kursi',
+    description: 'Kelinlikka ma\'naviy va amaliy tayyorgarlik kursi. 9 yo\'nalish, 56 ta video, 1,5 oy.',
+    url: siteUrl,
+    siteName: 'Kelinlikka tayyorlash',
+    images: [{ url: '/logo.png', width: 1200, height: 630, alt: 'Kelinlikka tayyorlash' }],
+    locale: 'uz_UZ',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kelinlikka tayyorlash | Kelinlik kursi',
+    description: 'Kelinlikka ma\'naviy va amaliy tayyorgarlik. 9 yo\'nalish, 56 ta video.',
+  },
   icons: {
     icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
   },

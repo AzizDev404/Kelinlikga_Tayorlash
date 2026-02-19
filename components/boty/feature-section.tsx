@@ -92,15 +92,22 @@ export function FeatureSection() {
             }`}
             style={{ transitionDelay: '0ms' }}
           >
+            {isVisible && (
             <video
               autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
+              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%234F5B3A' width='100%25' height='100%25'/%3E%3C/svg%3E"
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source src="/any.mp4" type="video/mp4" />
             </video>
+            )}
+            {!isVisible && (
+              <div className="absolute inset-0 bg-primary" />
+            )}
             {/* Overlay Card */}
             <div className="absolute bottom-8 left-8 right-8 bg-white p-6 shadow-lg rounded-xl">
               <div>
@@ -150,16 +157,21 @@ export function FeatureSection() {
             }`}
             style={{ transitionDelay: '200ms' }}
           >
-            {/* Background Video */}
+            {/* Background Video — faqat ko'rinadigan joyda yuklanadi */}
+            {isVisible && (
             <video
               autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
+              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect fill='%238B9A6D' width='100%25' height='100%25'/%3E%3C/svg%3E"
               className="absolute inset-0 w-full h-full object-cover scale-[1.02]"
             >
               <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a0b7c364-afa9-4afa-9716-45718578cc01-Ih8UaqQr1bl8aoNlbRha4FgaQ65eXX.mp4" type="video/mp4" />
             </video>
+            )}
+            {!isVisible && <div className="absolute inset-0 bg-primary/80" />}
             {/* Overlay for text readability */}
             <div className="absolute inset-0 bg-transparent" />
             
@@ -187,15 +199,20 @@ export function FeatureSection() {
               isVideoVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
           >
+            {isVideoVisible && (
             <video
               autoPlay
               muted
               loop
               playsInline
+              preload="metadata"
+              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23e3e1e2' width='100%25' height='100%25'/%3E%3C/svg%3E"
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source src="/curse.mp4" type="video/mp4" />
             </video>
+            )}
+            {!isVideoVisible && <div className="absolute inset-0 bg-muted" />}
           </div>
 
           {/* Content */}

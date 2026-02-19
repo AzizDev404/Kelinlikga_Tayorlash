@@ -3,16 +3,20 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
+const POSTER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%23e3e1e2' width='100%25' height='100%25'/%3E%3C/svg%3E"
+
 export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#e3e1e2' }}>
-      {/* Background Video */}
-      <div className="border-b border-border/50 p-6 py-2" style={{ backgroundColor: '#e3e1e2' }}>
+      {/* Background Video — poster tez ko'rinadi, video keyin yuklanadi */}
+      <div className="relative border-b border-border/50 min-h-[60vh]" style={{ backgroundColor: '#e3e1e2' }}>
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
+          poster={POSTER}
           style={{
             position: 'absolute',
             top: '50%',
