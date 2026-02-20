@@ -3,29 +3,10 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-const POSTER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%23e3e1e2' width='100%25' height='100%25'/%3E%3C/svg%3E"
-
 export function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#e3e1e2' }}>
-      {/* Background Video — to'liq orqa fond, matn ustida */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={POSTER}
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/header.mp4" type="video/mp4" />
-        </video>
-        {/* Pastki gradient — matn o'qilishi uchun */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent pointer-events-none" />
-      </div>
-
-      {/* Content — video ustida */}
+      {/* Content */}
       <div className="relative z-10 w-full pt-20 mr-14 lg:mr-0">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="w-full lg:max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
