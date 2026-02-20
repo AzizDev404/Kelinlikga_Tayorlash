@@ -11,9 +11,9 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 pt-3 sm:pt-4">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 backdrop-blur-md rounded-lg py-0 my-0 animate-scale-fade-in bg-[rgba(255,255,255,0.4)] border border-[rgba(255,255,255,0.32)]" style={{ boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 50px' }}>
-        <div className="flex items-center justify-between gap-4 min-h-[56px] sm:min-h-[68px]">
+        <div className="relative flex items-center justify-between gap-4 min-h-[56px] sm:min-h-[68px]">
           {/* Left: Mobile menu / Desktop nav */}
-          <div className="flex items-center shrink-0 min-w-[44px] lg:min-w-0">
+          <div className="flex items-center shrink-0 min-w-[44px] lg:min-w-0 z-10">
             <button
               type="button"
               className="lg:hidden p-2 -m-2 text-foreground/80 hover:text-foreground boty-transition"
@@ -29,8 +29,8 @@ export function Header() {
             </div>
           </div>
 
-          {/* Center: Logo — flex-1 markazda, max-width bilan */}
-          <Link href="/" className="flex-1 flex justify-center items-center shrink-0 max-w-[140px] sm:max-w-[180px] min-w-0">
+          {/* Logo — mobil/desktop markazda (absolute) */}
+          <Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center z-10">
             <Image
               src="/logo.png"
               alt="Kelinlikka tayyorlash"
@@ -42,14 +42,14 @@ export function Header() {
             />
           </Link>
 
-          {/* Right: CTA */}
-          <div className="flex items-center shrink-0 min-w-[44px] lg:min-w-0 justify-end">
+          {/* Right: CTA faqat desktopda; mobil da bo'sh joy */}
+          <div className="flex items-center shrink-0 min-w-[44px] lg:min-w-0 justify-end z-10">
             <Link
               href="/#kurs"
-              className="group inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-primary text-primary-foreground px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium tracking-wide hover:bg-primary/90 boty-transition whitespace-nowrap"
+              className="hidden lg:inline-flex group items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium tracking-wide hover:bg-primary/90 boty-transition whitespace-nowrap"
             >
               Kursga yozilish
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 boty-transition shrink-0" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 boty-transition shrink-0" />
             </Link>
           </div>
         </div>
@@ -81,9 +81,10 @@ export function Header() {
             </Link>
             <Link
               href="/#kurs"
-              className="text-sm tracking-wide text-primary font-medium hover:text-primary/80 boty-transition"
+              className="group inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-full text-sm font-medium hover:bg-primary/90 boty-transition mt-2"
             >
               Kursga yozilish
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 boty-transition shrink-0" />
             </Link>
           </div>
         </div>

@@ -131,7 +131,7 @@ export function FeatureSection() {
                 Amaliy bilimlar
               </h3>
               <h3 className="text-2xl md:text-3xl text-primary-foreground/70 mb-4">
-                Kundalik hayotda qo'llash
+                Oilaviy hayotda qo'llash
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-primary-foreground/90 text-sm">
