@@ -29,7 +29,7 @@ export function Header() {
             </div>
           </div>
 
-          {/* Logo — mobil/desktop markazda (absolute) */}
+          {/* Logo — doim markazda */}
           <Link href="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center z-10">
             <Image
               src="/logo.png"
